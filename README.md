@@ -1,8 +1,10 @@
 # Yet_Another_Douban
 
-![image](https://github.com/utopianism/Yet_Another_Douban/blob/master/douban.gif)
+![image](https://github.com/utopianism/Yet_Another_Douban/blob/master/screenshorts/IMG_0.PNG)   ![image](https://github.com/utopianism/Yet_Another_Douban/blob/master/screenshorts/IMG_1.PNG)
 
-又一个仿 `豆瓣` 的项目
+![image](https://github.com/utopianism/Yet_Another_Douban/blob/master/screenshorts/IMG_2.PNG)   ![image](https://github.com/utopianism/Yet_Another_Douban/blob/master/screenshorts/IMG_3.PNG)
+
+一个仿 `豆瓣` 的项目
 
 环境：
 * Xcode 9.3.1
@@ -30,7 +32,7 @@
   * 详情页面导航栏的背景颜色透明值和标题跟随 `ScrollView` 变动
   
 TODO:
-* [ ] 电影详情页面增加图片浏览功能
+* [x] 电影详情页面增加图片浏览功能
 * [ ] 增加 TOP 几的标签 Buttom
 * [ ] 查看影人详情，剧照，作品
 * [ ] 获取更多短评
