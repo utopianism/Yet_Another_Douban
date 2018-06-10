@@ -29,7 +29,6 @@
   * `fluid-transitions`， 类似 iOS11 之中的 AppStore 里面的转场效果
   * 详情页面导航栏的背景颜色透明值和标题跟随 `ScrollView` 变动
   
-  
 TODO:
 * [ ] 电影详情页面增加图片浏览功能
 * [ ] 增加 TOP 几的标签 Buttom

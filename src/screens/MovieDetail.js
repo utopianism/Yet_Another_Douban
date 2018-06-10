@@ -174,6 +174,9 @@ class MovieDetail extends Component<Props, State> {
       outputRange: ['transparent', backgroundColor],
       extrapolate: 'clamp',
     });
+    // $FlowFixMe
+    const { index } = this.props.navigation.state.params;
+    const { cover } = this.props.navigation.state.params.item;
     return (
 
       <Container>
@@ -208,17 +211,16 @@ class MovieDetail extends Component<Props, State> {
         )}
         >
           <View style={[coverStyle, { backgroundColor }]}>
-            <Transition shared={`image${this.props.navigation.state.params.index}`}>
+            <Transition shared={`image${index}`}>
               <Image
-                  // $FlowFixMe
-                source={{ uri: this.props.navigation.state.params.item.cover }}
+                source={{ uri: cover }}
                 style={imageStyle}
               />
             </Transition>
           </View>
 
           <View style={movieStyle}>
-            <MovieInfoView info={movieInfo} />
+            <MovieInfoView info={movieInfo} index={parseInt(index, 10) + 1} />
             <MovieRatingView rating={movieRating} />
           </View>
 

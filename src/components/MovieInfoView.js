@@ -7,11 +7,13 @@ import {
   Dimensions,
 } from 'react-native';
 import type { MovieInfo } from '../types/TypeDefinition';
+import { TopRatingButton } from './TopRatingButton';
 
 const WIDTH = Dimensions.get('window').width;
 
 type Props ={
   info: MovieInfo,
+  index: number,
 }
 
 const MovieInfoView = (props: Props) => {
@@ -22,7 +24,7 @@ const MovieInfoView = (props: Props) => {
     titleTextStyle,
   } = styles;
 
-  const { info } = props;
+  const { info, index } = props;
 
   const {
     title,
@@ -36,6 +38,7 @@ const MovieInfoView = (props: Props) => {
       <View style={titleStyle}>
         <Text style={titleTextStyle} numberOfLines={1}>{title}</Text>
       </View>
+      <TopRatingButton title={`No.${index}`} subTitle="豆瓣Top250" />
       <Text style={textStyle} numberOfLines={1}>{desc(info)}</Text>
       {originalTitle && <Text style={textStyle} numberOfLines={1}>{`原名：${originalTitle}`}</Text>}
       <Text style={textStyle} numberOfLines={1}>{`上映时间：${pubdates}`}</Text>

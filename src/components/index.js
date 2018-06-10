@@ -20,3 +20,4 @@ export * from './MovieInfoView';
 export * from './MovieRatingView';
 export * from './TagsView';
 export * from './BasicText';
+export * from './TopRatingButton';
