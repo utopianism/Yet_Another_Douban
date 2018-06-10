@@ -1,5 +1,8 @@
 
 // @flow
+
+// TODO: 或许这里需要重构下
+
 import React from 'react';
 import {
   StyleSheet,
@@ -9,18 +12,24 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { constants } from '../config';
+import type { Style } from '../types/TypeDefinition';
 
-const NavHeader = ({
-  style,
-  onPressRight,
-  onPressLeft,
-  title,
-  titleView,
-  rightTitle,
-  rightView,
-  hideBorder,
-  textColor,
-}) => {
+type Props = {
+  style?: Style,
+  onPressLeft?: () => void,
+  title?: string,
+  hideBorder?: boolean,
+  textColor?: string,
+}
+
+const NavHeader = (props: Props) => {
+  const {
+    style,
+    onPressLeft,
+    title,
+    hideBorder,
+    textColor,
+  } = props;
   const border = {
     borderBottomWidth: 0.5,
     borderBottomColor: 'lightgray',
@@ -33,8 +42,6 @@ const NavHeader = ({
     navCentreViewStyle,
     titleStyle,
     navRightViewStyle,
-    rightTitleStyle,
-
   } = styles;
   return (
     <View style={[narViewStyle, style, (hideBorder || border)]}>
@@ -57,30 +64,17 @@ const NavHeader = ({
 
 
       <View style={navCentreViewStyle}>
-        {titleView === undefined
-          ?
-            <Text
-              style={[titleStyle, { color }]}
-              ellipsizeMode="tail"
-              numberOfLines={1}
-            >
-              {title}
-            </Text>
-            : titleView}
+        <Text
+          style={[titleStyle, { color }]}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+        >
+          {title}
+        </Text>
       </View>
 
-      <View style={navRightViewStyle}>
-        <TouchableOpacity style={rightTitleStyle} onPress={onPressRight}>
-          {
-            rightTitle ?
-              <Text style={{ fontSize: 17, color }}>
-                {rightTitle}
-              </Text>
-            :
-            rightView
-        }
-        </TouchableOpacity>
-      </View>
+      <View style={navRightViewStyle} />
+
     </View>
   );
 };
@@ -118,12 +112,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-  },
-  rightTitleStyle: {
-    height: constants.navHeight - constants.navTop,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingRight: 12,
   },
   leftTitleStyle: {
     height: constants.navHeight - constants.navTop,

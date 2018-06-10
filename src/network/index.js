@@ -12,7 +12,7 @@ async function getMovieDetail(itemId: string) {
     const uri = data.images.small;
     const {
       title,
-      original_title,
+      original_title: originalTitle,
       year,
       pubdates,
       countries,
@@ -23,8 +23,8 @@ async function getMovieDetail(itemId: string) {
       summary,
       directors,
       photos,
-      popular_comments,
-      photos_count,
+      popular_comments: popularComments,
+      photos_count: photosCount,
     } = data;
 
     const movieInfo = {
@@ -34,7 +34,7 @@ async function getMovieDetail(itemId: string) {
       countries,
       year,
       type: genres,
-      originalTitle: original_title,
+      originalTitle,
     };
 
     const { details } = rating;
@@ -57,7 +57,7 @@ async function getMovieDetail(itemId: string) {
 
     const casts = aCasts.concat(aDirectors);
 
-    const comments = popular_comments.map((comment) => {
+    const comments = popularComments.map((comment) => {
       return {
         rating: {
           value: comment.rating.value,
@@ -83,7 +83,7 @@ async function getMovieDetail(itemId: string) {
       imgURLs,
       summary,
       uri,
-      photosCount: photos_count,
+      photosCount,
     };
   } catch (e) {
     throw e;

@@ -79,8 +79,9 @@ const MoreTab = createStackNavigator({
 }, { ...stackNavigatorConfig });
 
 /**
- * tabBar 定义
+ * tabBar 定义,   just for test
  */
+/*eslint-disable */
 const tab = createBottomTabNavigator({
   Movies: {
     screen: MoviesTab,
@@ -109,5 +110,6 @@ const tab = createBottomTabNavigator({
     },
   },
 }, { ...tabBarConfig });
+/* eslint-enable */
 
 export default MoviesTab;

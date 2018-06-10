@@ -12,7 +12,7 @@ import type { Comment } from '../types/TypeDefinition';
 
 
 type Props = {
-  comments: [Comment],
+  comments: Array<Comment>,
 };
 
 const WIDTH = Dimensions.get('window').width;

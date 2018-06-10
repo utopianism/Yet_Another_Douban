@@ -31,6 +31,7 @@ class Count extends React.Component<Props, State> {
   }
 
   componentWillUnmount() {
+    // $FlowFixMe
     clearInterval(timer);
   }
 

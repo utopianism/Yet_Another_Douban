@@ -13,6 +13,7 @@ type State = {
 }
 
 const initialState = {
+  // $FlowFixMe
   data: [],
   isFetching: true,
   isLoadMore: false,
@@ -33,6 +34,7 @@ export default (state: State = initialState, action: Action): State => {
       return {
         ...state,
         isFetching: false,
+        // $FlowFixMe
         data: action.payload,
       };
     case 'FETCH_MOVIE_TRENDS_FAIL':

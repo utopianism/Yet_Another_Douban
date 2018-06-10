@@ -32,13 +32,16 @@ const navigationPropConstructor = createNavigationPropConstructor('root');
 
 class App extends React.Component<{}> {
   componentDidMount() {
+    // $FlowFixMe
     initializeListeners('root', this.props.nav);
     localeMoment();
   }
 
   render() {
     const navigation = navigationPropConstructor(
+      // $FlowFixMe
       this.props.dispatch,
+      // $FlowFixMe
       this.props.nav,
     );
     return <Navigator navigation={navigation} />;

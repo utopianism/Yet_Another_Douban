@@ -38,6 +38,7 @@ const { NativeInterface } = NativeModules;
 
 const coverHeight = constants.screenHeight / 2.3;
 
+
 type Props = {};
 
 type State = {
@@ -96,6 +97,7 @@ const arrow = (
   />
 );
 
+const navTitle = '电影';
 
 class MovieDetail extends Component<Props, State> {
   state: State
@@ -106,7 +108,7 @@ class MovieDetail extends Component<Props, State> {
       backgroundColor: 'lightgrey',
       ...initData,
       scrollY: new Animated.Value(0),
-      headerTitle: '电影',
+      headerTitle: navTitle,
     };
   }
 
@@ -176,6 +178,7 @@ class MovieDetail extends Component<Props, State> {
     });
     // $FlowFixMe
     const { index } = this.props.navigation.state.params;
+    // $FlowFixMe
     const { cover } = this.props.navigation.state.params.item;
     return (
 
@@ -183,7 +186,13 @@ class MovieDetail extends Component<Props, State> {
         <StatusBar barStyle="light-content" />
 
         <Animated.View style={[headerStyle, { backgroundColor: bgColor }]} >
-          <TouchableOpacity style={headerLeftStyle} onPress={() => this.props.navigation.goBack()}>
+          <TouchableOpacity
+            style={headerLeftStyle}
+            onPress={() => {
+            // $FlowFixMe
+            return this.props.navigation.goBack();
+          }}
+          >
             {arrow}
           </TouchableOpacity>
 
@@ -202,9 +211,11 @@ class MovieDetail extends Component<Props, State> {
              listener: (event) => {
                           const scrollY = event.nativeEvent.contentOffset.y;
                           if (scrollY > coverHeight + 30) {
-                            this.setState({ headerTitle: movieInfo.title });
-                          } else {
-                            this.setState({ headerTitle: '电影' });
+                            if (this.state.headerTitle !== movieInfo.title) {
+                                this.setState({ headerTitle: movieInfo.title });
+                            }
+                          } else if (this.state.headerTitle !== navTitle) {
+                              this.setState({ headerTitle: navTitle });
                           }
                         },
             },
