@@ -10,7 +10,6 @@ export * from './EmptyView';
 export * from './AsyncImage';
 export * from './NavHeader';
 export * from './RatingStar';
-export * from './TagsButton';
 export * from './MovieSummary';
 export * from './CastsList';
 export * from './FilmPhotos';
