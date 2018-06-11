@@ -54,6 +54,8 @@
 		BF1225CD4CA64F1FA9F2C432 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61795FB3D9464F84A1746E3E /* Ionicons.ttf */; };
 		C815B34F20C8D2BD003A7D1F /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C815B34E20C8D2BD003A7D1F /* ImageCache.m */; };
 		C815B36D20C8E33D003A7D1F /* ImageColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C815B36C20C8E33D003A7D1F /* ImageColors.m */; };
+		C86E615220CEB07700E2B590 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E606420CE0DD300E2B590 /* Lottie.framework */; };
+		C86E615320CEB07700E2B590 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C86E606420CE0DD300E2B590 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C89AB16120C85C520065014C /* NativeInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = C89AB16020C85C510065014C /* NativeInterface.m */; };
 		C8D4A19320C582CF0035064A /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8D4A18820C582CF0035064A /* Octicons.ttf */; };
 		C8D4A19420C582CF0035064A /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8D4A18920C582CF0035064A /* Feather.ttf */; };
@@ -379,6 +381,13 @@
 			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
 			remoteInfo = LottieReactNative;
 		};
+		C86E615420CEB07700E2B590 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FAED736BAFA41098D1FA783 /* Lottie.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 62CA59B71E3C173B002D7188;
+			remoteInfo = Lottie_iOS;
+		};
 		C8D3BCF820C5823600AA2A3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF61654FED634CB0B019BBEA /* RNVectorIcons.xcodeproj */;
@@ -387,6 +396,20 @@
 			remoteInfo = RNVectorIcons;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C86E615620CEB07800E2B590 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C86E615320CEB07700E2B590 /* Lottie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -474,6 +497,7 @@
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
+				C86E615220CEB07700E2B590 /* Lottie.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
@@ -840,10 +864,12 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				C86E615620CEB07800E2B590 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C86E615520CEB07700E2B590 /* PBXTargetDependency */,
 			);
 			name = douban;
 			productName = "Hello World";
@@ -1441,6 +1467,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* douban-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		C86E615520CEB07700E2B590 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Lottie_iOS;
+			targetProxy = C86E615420CEB07700E2B590 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
