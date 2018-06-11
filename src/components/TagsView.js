@@ -14,7 +14,7 @@ import { colors } from '../config';
 const WIDTH = Dimensions.get('window').width;
 
 type Props = {
-  tags: Array<string>;
+  tags: Array<string> | null;
   onPress?: () => void,
 };
 
@@ -27,7 +27,7 @@ const TagsView = (props: Props) => {
   const { tags, onPress } = props;
   return (
     <View style={containerStyle} >
-      {tags.map((tag, index) => {
+      {tags && tags.map((tag, index) => {
         return (
           <TouchableOpacity
             style={textViewStyle}

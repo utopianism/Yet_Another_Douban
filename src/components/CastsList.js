@@ -14,7 +14,7 @@ import { ImageListFooter } from './ImageListFooter';
 
 type Props = {
   onPress?: () => void,
-  casts: Array<Cast>,
+  casts: Array<Cast> | null,
 };
 
 const WIDTH = Dimensions.get('window').width;
@@ -47,6 +47,7 @@ const CastsList = (props: Props) => {
         windowSize={3}
         ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
         ListFooterComponent={() => {
+          // $FlowFixMe ...I know, I know
           return <ImageListFooter title="全部" count={`${props.casts && props.casts.length}人`} />;
         }}
       />

@@ -13,7 +13,7 @@ import { ImageListFooter } from './ImageListFooter';
 
 type Props = {
   onPress?: () => void,
-  imgURLs: Array<string>,
+  imgURLs: Array<string> | null,
   photosCount: number,
 };
 
